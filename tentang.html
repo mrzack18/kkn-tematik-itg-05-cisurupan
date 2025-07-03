@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tentang Kami - KKN 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <style>
+        /* Custom Animations & Styles */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Navbar Toggle (for smaller screens) */
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #1e3a8a; /* Darker blue for dropdown */
+                position: absolute;
+                top: 64px; /* Adjust based on navbar height */
+                left: 0;
+                padding-bottom: 1rem;
+            }
+            .navbar-menu.active {
+                display: flex;
+            }
+            .navbar-menu a {
+                padding: 0.75rem 1.5rem;
+                text-align: center;
+            }
+            .hamburger-icon {
+                display: block;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <nav class="bg-blue-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl md:text-3xl font-extrabold tracking-wide animate-pulse">KKN Desa Cisurupan</a>
+            <button class="md:hidden text-white text-2xl focus:outline-none hamburger-icon" id="menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="hidden md:flex space-x-6 text-lg navbar-menu" id="navbar-menu">
+                <a href="index.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Beranda
+                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </a>
+                <a href="artikel.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Artikel
+                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </a>
+                <a href="struktur.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Struktur
+                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white text-center py-16 px-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 fade-in-up">Tentang KKN Desa Cisurupan 🌟</h1>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90 fade-in-up" style="animation-delay: 0.2s;">Mengenal lebih jauh latar belakang, tujuan, dan komitmen kami dalam memberdayakan masyarakat.</p>
+    </section>
+
+    <main class="container mx-auto px-4 py-8 md:py-12 max-w-5xl">
+        <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg fade-in-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-blue-800 mb-6 text-center">Apa Itu KKN Kami?</h2>
+            <img src="img/kkn-tentang.jpg" alt="Gambar Tim KKN dan Desa" class="w-full h-64 md:h-80 object-cover rounded-md mb-6 shadow-md">
+
+            <p class="text-gray-700 text-lg leading-relaxed mb-4">
+                Program **Kuliah Kerja Nyata (KKN) 2025** merupakan salah satu bentuk pengabdian kepada masyarakat yang diinisiasi oleh mahasiswa dari berbagai disiplin ilmu. Berlokasi di **Desa Cisurupan Baru**, program ini dirancang untuk mengintegrasikan teori perkuliahan dengan praktik langsung di lapangan, sekaligus memberikan kontribusi nyata bagi pengembangan desa.
+            </p>
+            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                Kami, sebagai tim KKN, berkomitmen untuk bekerja sama dengan pemerintah desa dan seluruh elemen masyarakat dalam mengidentifikasi, merencanakan, dan melaksanakan program-program yang relevan dan berkelanjutan. Tujuan utama kami adalah menciptakan dampak positif yang berkesinambungan dan meninggalkan warisan yang berarti bagi komunitas Desa Cisurupan Baru.
+            </p>
+
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4 mt-8 text-center">Visi & Misi</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                <div class="bg-blue-50 p-5 rounded-lg border border-blue-200 shadow-sm fade-in-up" style="animation-delay: 0.4s;">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3"><i class="fas fa-eye mr-2 text-blue-500"></i> Visi</h3>
+                    <p class="text-gray-700">
+                        Menjadi katalis perubahan positif yang berkesinambungan bagi Desa Cisurupan Baru melalui implementasi program pemberdayaan masyarakat yang inovatif dan partisipatif.
+                    </p>
+                </div>
+                <div class="bg-blue-50 p-5 rounded-lg border border-blue-200 shadow-sm fade-in-up" style="animation-delay: 0.5s;">
+                    <h3 class="text-xl font-semibold text-blue-700 mb-3"><i class="fas fa-bullseye mr-2 text-blue-500"></i> Misi</h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Mengadakan program edukasi dan pelatihan yang sesuai dengan kebutuhan masyarakat.</li>
+                        <li>Mendorong pemanfaatan teknologi tepat guna untuk peningkatan kualitas hidup.</li>
+                        <li>Membangun kemandirian ekonomi melalui pengembangan UMKM lokal.</li>
+                        <li>Meningkatkan kesadaran akan pentingnya kebersihan dan kelestarian lingkungan.</li>
+                        <li>Menjalin kolaborasi erat dengan pemerintah desa dan stakeholder terkait.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4 mt-8 text-center">Lokasi KKN: Desa Cisurupan Baru</h2>
+            <p class="text-gray-700 text-lg leading-relaxed mb-6">
+                Desa Cisurupan Baru adalah sebuah desa yang kaya akan potensi alam dan sumber daya manusia. Terletak di [Sebutkan letak geografis singkat, misal: kaki gunung X atau dekat sungai Y], desa ini memiliki [Sebutkan karakteristik singkat, misal: lahan pertanian subur, kerajinan tangan khas, dll.]. Kami sangat antusias dapat berkontribusi di desa ini dan belajar langsung dari kearifan lokal masyarakatnya.
+            </p>
+            <div class="aspect-w-16 aspect-h-9 mb-6 rounded-lg overflow-hidden shadow-md fade-in-up" style="animation-delay: 0.6s;">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15842.274191395568!2d107.57076395!3d-6.95324645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e8e7c1a8a2d7%3A0x7d6f5f9e9a4f6e4!2sDesa%20Cisurupan!5e0!3m2!1sen!2sid!4v1701234567890!5m2!1sen!2sid"
+                    width="100%"
+                    height="450"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+            <p class="text-center text-gray-600 text-sm italic">
+                Peta lokasi Desa Cisurupan (contoh). Anda bisa menggantinya dengan lokasi yang lebih spesifik.
+            </p>
+        </div>
+    </main>
+
+    <footer class="bg-blue-900 text-white py-6 md:py-8 text-center mt-8">
+        <div class="container mx-auto px-4">
+            <p class="mb-2 md:mb-3 text-base md:text-lg">&copy; 2025 KKN Desa Cisurupan. All rights reserved.</p>
+            <div class="space-x-4 md:space-x-6 text-xl md:text-2xl mb-3 md:mb-4">
+                <a href="#" class="hover:text-yellow-300 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="text-xs md:text-sm text-gray-400">Dibuat dengan ❤️ untuk kemajuan Desa Cisurupan Baru.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for responsive navbar toggle
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const navbarMenu = document.getElementById('navbar-menu');
+            navbarMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
