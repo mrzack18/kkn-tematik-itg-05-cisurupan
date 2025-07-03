@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Galeri Kegiatan - KKN 2025</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     /* Custom Animations & Styles */
     .fade-in-up {
@@ -43,19 +44,24 @@
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: #1e3a8a; /* Darker blue for dropdown */
+        background-color: #1e3a8a;
+        /* Darker blue for dropdown */
         position: absolute;
-        top: 64px; /* Adjust based on navbar height */
+        top: 64px;
+        /* Adjust based on navbar height */
         left: 0;
         padding-bottom: 1rem;
       }
+
       .navbar-menu.active {
         display: flex;
       }
+
       .navbar-menu a {
         padding: 0.75rem 1.5rem;
         text-align: center;
       }
+
       .hamburger-icon {
         display: block;
       }
@@ -77,35 +83,43 @@
       visibility: hidden;
       transition: opacity 0.3s ease-in-out;
     }
+
     .modal-overlay.active {
       opacity: 1;
       visibility: visible;
     }
+
     .modal-content {
       position: relative;
       max-width: 90%;
       max-height: 90%;
-      background-color: white; /* Changed for better contrast with dark overlay */
+      background-color: white;
+      /* Changed for better contrast with dark overlay */
       border-radius: 8px;
       overflow: hidden;
       display: flex;
       justify-content: center;
       align-items: center;
     }
+
     .modal-content img {
       max-width: 100%;
       max-height: 100%;
-      object-fit: contain; /* Ensures image fits within bounds */
+      object-fit: contain;
+      /* Ensures image fits within bounds */
     }
+
     .modal-close {
       position: absolute;
       top: 1rem;
       right: 1rem;
       color: white;
-      font-size: 2.5rem; /* Larger for easy tap/click */
+      font-size: 2.5rem;
+      /* Larger for easy tap/click */
       cursor: pointer;
-      z-index: 1010; /* Ensure it's above image */
-      background: rgba(0,0,0,0.5);
+      z-index: 1010;
+      /* Ensure it's above image */
+      background: rgba(0, 0, 0, 0.5);
       border-radius: 50%;
       width: 40px;
       height: 40px;
@@ -115,23 +129,29 @@
     }
   </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800 font-sans">
 
   <nav class="bg-blue-800 text-white shadow-lg sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-2xl md:text-3xl font-extrabold tracking-wide animate-pulse">KKN Desa Cisurupan</a>
+      <a href="index.html" class="text-2xl md:text-3xl font-extrabold tracking-wide animate-pulse">KKN Desa
+        Cisurupan</a>
       <button class="md:hidden text-white text-2xl focus:outline-none hamburger-icon" id="menu-button">
         <i class="fas fa-bars"></i>
       </button>
       <div class="hidden md:flex space-x-6 text-lg navbar-menu" id="navbar-menu">
         <a href="index.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Beranda
-          <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
         </a>
         <a href="artikel.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Artikel
-          <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
         </a>
-        <a href="struktur.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Struktur
-          <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        <a href="struktur.html"
+          class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Struktur
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
         </a>
       </div>
     </div>
@@ -139,14 +159,16 @@
 
   <section class="bg-gradient-to-r from-purple-600 to-indigo-700 text-white text-center py-16 px-4">
     <h1 class="text-4xl md:text-5xl font-extrabold mb-4 fade-in-up">Galeri Foto Kegiatan KKN 📸</h1>
-    <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90 fade-in-up" style="animation-delay: 0.2s;">Jelajahi momen-momen berharga dan inspiratif dari setiap kegiatan KKN kami di Desa Cisurupan Baru.</p>
+    <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90 fade-in-up" style="animation-delay: 0.2s;">Jelajahi
+      momen-momen berharga dan inspiratif dari setiap kegiatan KKN kami di Desa Cisurupan Baru.</p>
   </section>
 
   <div class="container mx-auto px-4 py-8 md:py-12 max-w-7xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-blue-800 fade-in-up">Momen Kebersamaan Kami</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-blue-800 fade-in-up">Momen Kebersamaan Kami
+    </h2>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8" id="galleryContainer">
-      </div>
+    </div>
   </div>
 
   <div id="imageModal" class="modal-overlay">
@@ -171,13 +193,13 @@
 
   <script>
     // JavaScript for responsive navbar toggle
-    document.getElementById('menu-button').addEventListener('click', function() {
+    document.getElementById('menu-button').addEventListener('click', function () {
       const navbarMenu = document.getElementById('navbar-menu');
       navbarMenu.classList.toggle('active');
     });
 
     // JavaScript for loading gallery images dynamically and handling lightbox
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
       const galleryContainer = document.getElementById('galleryContainer');
       const imageModal = document.getElementById('imageModal');
       const modalImage = document.getElementById('modalImage');
@@ -188,11 +210,6 @@
         { src: "img/kegiatan1.jpg", alt: "Edukasi Anak-anak", caption: "Tim KKN mengajar di SD Cisurupan." },
         { src: "img/kegiatan2.jpg", alt: "Kerja Bakti Desa", caption: "Masyarakat dan mahasiswa bergotong royong membersihkan desa." },
         { src: "img/kegiatan3.jpg", alt: "Sosialisasi Kesehatan", caption: "Penyuluhan pentingnya gizi seimbang." },
-        { src: "https://via.placeholder.com/600x400/9370DB/FFFFFF?text=Pemberdayaan+UMKM", alt: "Pemberdayaan UMKM", caption: "Pelatihan pembuatan kerajinan tangan lokal." },
-        { src: "https://via.placeholder.com/600x400/FFD700/800080?text=Kegiatan+Pertanian", alt: "Kegiatan Pertanian", caption: "Membantu petani menerapkan metode baru." },
-        { src: "https://via.placeholder.com/600x400/87CEEB/FFFFFF?text=Pengembangan+Wisata", alt: "Pengembangan Wisata", caption: "Eksplorasi potensi wisata desa." },
-        { src: "https://via.placeholder.com/600x400/FF6347/FFFFFF?text=Acara+Kesenian", alt: "Acara Kesenian", caption: "Malam kebudayaan bersama warga." },
-        { src: "https://via.placeholder.com/600x400/32CD32/FFFFFF?text=Penanaman+Pohon", alt: "Penanaman Pohon", caption: "Aksi penghijauan di lingkungan desa." },
       ];
 
       galleryImages.forEach(image => {
@@ -208,7 +225,7 @@
       });
 
       // Event listeners for opening modal
-      galleryContainer.addEventListener('click', function(event) {
+      galleryContainer.addEventListener('click', function (event) {
         const target = event.target.closest('.group');
         if (target && target.dataset.src) {
           modalImage.src = target.dataset.src;
@@ -218,12 +235,12 @@
       });
 
       // Event listener for closing modal
-      closeModal.addEventListener('click', function() {
+      closeModal.addEventListener('click', function () {
         imageModal.classList.remove('active');
         document.body.style.overflow = ''; // Restore scrolling
       });
 
-      imageModal.addEventListener('click', function(event) {
+      imageModal.addEventListener('click', function (event) {
         if (event.target === imageModal) { // Only close if clicking on the overlay itself, not the image
           imageModal.classList.remove('active');
           document.body.style.overflow = '';
@@ -232,4 +249,5 @@
     });
   </script>
 </body>
+
 </html>
