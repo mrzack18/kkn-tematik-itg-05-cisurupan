@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Struktur Organigram - KKN 2025</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     /* Custom Animations & Styles */
     .fade-in-up {
@@ -43,57 +44,74 @@
         display: none;
         flex-direction: column;
         width: 100%;
-        background-color: #1e3a8a; /* Darker blue for dropdown */
+        background-color: #1e3a8a;
+        /* Darker blue for dropdown */
         position: absolute;
-        top: 64px; /* Adjust based on navbar height */
+        top: 64px;
+        /* Adjust based on navbar height */
         left: 0;
         padding-bottom: 1rem;
       }
+
       .navbar-menu.active {
         display: flex;
       }
+
       .navbar-menu a {
         padding: 0.75rem 1.5rem;
         text-align: center;
       }
+
       .hamburger-icon {
         display: block;
       }
     }
 
-    /* For the organizational chart lines (purely visual, could be more complex with SVG/JS) */
-    .org-line {
-      position: absolute;
-      background-color: #3B82F6; /* Blue-600 */
-      z-index: -1;
-    }
-    .org-line-vertical {
-      width: 2px;
-      left: 50%;
-      transform: translateX(-50%);
-    }
+    /* Remove org-line styles as they won't be used with this new layout */
+    .org-line,
+    .org-line-vertical,
     .org-line-horizontal {
-      height: 2px;
+      display: none !important;
     }
   </style>
 </head>
+
 <body class="bg-gray-50 text-gray-800 font-sans">
 
   <nav class="bg-blue-800 text-white shadow-lg sticky top-0 z-50">
     <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="index.html" class="text-2xl md:text-3xl font-extrabold tracking-wide animate-pulse">KKN Desa Cisurupan</a>
+      <a href="index.html" class="text-2xl md:text-3xl font-extrabold tracking-wide animate-pulse">KKN Desa
+        Cisurupan</a>
       <button class="md:hidden text-white text-2xl focus:outline-none hamburger-icon" id="menu-button">
         <i class="fas fa-bars"></i>
       </button>
       <div class="hidden md:flex space-x-6 text-lg navbar-menu" id="navbar-menu">
         <a href="index.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Beranda
-          <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
         </a>
         <a href="artikel.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Artikel
-          <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
         </a>
-        <a href="struktur.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group active-link">Struktur
-          <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-100 transition-transform duration-300 origin-left"></span>
+        <a href="struktur.html"
+          class="hover:text-yellow-300 transition duration-300 ease-in-out relative group active-link">Struktur
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+        <a href="galeri.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Galeri
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+        <a href="media-partner.html"
+          class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Mitra Kami
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+        <a href="tentang.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Tentang
+          Kami
+          <span
+            class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
         </a>
       </div>
     </div>
@@ -101,62 +119,111 @@
 
   <section class="bg-gradient-to-r from-teal-500 to-blue-600 text-white text-center py-16 px-4">
     <h1 class="text-4xl md:text-5xl font-extrabold mb-4 fade-in-up">Struktur Tim KKN 2025 📋</h1>
-    <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90 fade-in-up" style="animation-delay: 0.2s;">Kenali individu-individu hebat di balik setiap program dan kegiatan kami di Desa Cisurupan Baru.</p>
+    <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90 fade-in-up" style="animation-delay: 0.2s;">Kenali
+      individu-individu hebat di balik setiap program dan kegiatan kami di Desa Cisurupan Baru.</p>
   </section>
 
   <div class="container mx-auto px-4 py-8 md:py-12 max-w-7xl">
-    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-blue-800 fade-in-up">Organigram Tim KKN</h2>
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-blue-800 fade-in-up">Anggota Tim KKN</h2>
 
-    <div class="relative flex justify-center flex-wrap gap-6 md:gap-8 lg:gap-12 fade-in-up">
-      <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-2 relative">
-        <div class="bg-white rounded-xl shadow-lg border border-blue-200 p-6 text-center scale-up-hover shadow-hover h-full flex flex-col justify-center">
-          <img src="img/ketua.jpg" alt="Zaki Muhammad - Ketua KKN" class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-400 shadow-md"/>
-          <h3 class="text-xl md:text-2xl font-bold text-blue-900 mb-1">Zaki Muhammad</h3>
+    <div class="mb-12 fade-in-up">
+      <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">Dosen Pembimbing Lapangan</h3>
+      <div class="flex justify-center">
+        <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-2">
+          <div
+            class="bg-blue-100 rounded-xl shadow-lg border border-blue-300 p-6 text-center scale-up-hover shadow-hover h-full flex flex-col justify-center">
+            <img src="img/organigram/dpl.jpg" alt="Asri Mulyani, S.Pd, M.Kom."
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-500 shadow-md" />
+            <h4 class="text-xl md:text-2xl font-bold text-blue-900 mb-1">Asri Mulyani, S.Pd, M.Kom.</h4>
+            <p class="text-md md:text-lg text-gray-700 font-semibold">Dosen Pembimbing Lapangan</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-600">
+              <a href="#" class="hover:text-blue-800 transition"><i class="fas fa-chalkboard-teacher text-xl"></i></a>
+              <a href="#" class="hover:text-blue-800 transition"><i class="fas fa-envelope text-xl"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+      <!-- Kartu Irham -->
+      <div class="p-2 w-[270px]">
+        <div class="bg-white rounded-xl shadow-lg border border-blue-200 p-6 text-center h-full">
+          <img src="img/organigram/irham.jpg" alt="Irham - Ketua KKN"
+            class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-400 shadow-md" />
+          <h4 class="text-xl md:text-2xl font-bold text-blue-900 mb-1">Irham</h4>
           <p class="text-md md:text-lg text-gray-700 font-semibold">Ketua KKN</p>
           <div class="mt-3 flex justify-center space-x-4 text-blue-500">
             <a href="#" class="hover:text-blue-700 transition"><i class="fab fa-linkedin text-xl"></i></a>
             <a href="#" class="hover:text-blue-700 transition"><i class="fab fa-instagram text-xl"></i></a>
           </div>
         </div>
-        <div class="hidden md:block org-line org-line-vertical h-8 -bottom-1 top-full"></div>
       </div>
 
-      <div class="hidden md:flex justify-center w-full relative">
-        <div class="org-line org-line-horizontal w-1/2 h-0.5 rounded-full" style="top: -24px;"></div>
+      <!-- Kartu Dzikri -->
+      <div class="p-2 w-[270px]">
+        <div class="bg-white rounded-xl shadow-lg border border-blue-200 p-6 text-center h-full">
+          <img src="img/organigram/dzikri.jpg" alt="Dzikri - Wakil Ketua KKN"
+            class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-400 shadow-md" />
+          <h4 class="text-xl md:text-2xl font-bold text-blue-900 mb-1">Dzikri</h4>
+          <p class="text-md md:text-lg text-gray-700 font-semibold">Wakil Ketua KKN</p>
+          <div class="mt-3 flex justify-center space-x-4 text-blue-500">
+            <a href="#" class="hover:text-blue-700 transition"><i class="fab fa-linkedin text-xl"></i></a>
+            <a href="#" class="hover:text-blue-700 transition"><i class="fab fa-instagram text-xl"></i></a>
+          </div>
+        </div>
       </div>
+    </div>
 
-      <div class="w-full flex flex-wrap justify-center gap-6 md:gap-8 lg:gap-12 mt-6 md:mt-8">
-        <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-2 relative">
-          <div class="bg-white rounded-xl shadow-lg border border-blue-200 p-6 text-center scale-up-hover shadow-hover h-full flex flex-col justify-center">
-            <img src="img/sekr.jpg" alt="Nadia Putri - Sekretaris" class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-400 shadow-md"/>
-            <h3 class="text-xl md:text-2xl font-bold text-blue-900 mb-1">Nadia Putri</h3>
-            <p class="text-md md:text-lg text-gray-700 font-semibold">Sekretaris</p>
+    <div class="mb-12 fade-in-up">
+      <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">Sekretaris & Bendahara</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 justify-items-center">
+        <div class="w-full p-2">
+          <div
+            class="bg-white rounded-xl shadow-lg border border-blue-200 p-6 text-center scale-up-hover shadow-hover h-full flex flex-col justify-center">
+            <img src="img/organigram/pia.jpg" alt="Pia - Sekretaris 1"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-400 shadow-md" />
+            <h4 class="text-xl md:text-2xl font-bold text-blue-900 mb-1">Pia</h4>
+            <p class="text-md md:text-lg text-gray-700 font-semibold">Sekretaris 1</p>
             <div class="mt-3 flex justify-center space-x-4 text-blue-500">
               <a href="#" class="hover:text-blue-700 transition"><i class="fab fa-linkedin text-xl"></i></a>
               <a href="#" class="hover:text-blue-700 transition"><i class="fab fa-instagram text-xl"></i></a>
             </div>
           </div>
-          <div class="hidden md:block org-line org-line-vertical h-8 -bottom-1 top-full"></div>
         </div>
-
-        <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-2 relative">
-          <div class="bg-white rounded-xl shadow-lg border border-blue-200 p-6 text-center scale-up-hover shadow-hover h-full flex flex-col justify-center">
-            <img src="https://via.placeholder.com/150" alt="Rafi Maulana - Bendahara" class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-400 shadow-md"/>
-            <h3 class="text-xl md:text-2xl font-bold text-blue-900 mb-1">Rafi Maulana</h3>
-            <p class="text-md md:text-lg text-gray-700 font-semibold">Bendahara</p>
+        <div class="w-full p-2">
+          <div
+            class="bg-white rounded-xl shadow-lg border border-blue-200 p-6 text-center scale-up-hover shadow-hover h-full flex flex-col justify-center">
+            <img src="img/organigram/rasyid.jpg" alt="Rasyid - Sekretaris 2"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-400 shadow-md" />
+            <h4 class="text-xl md:text-2xl font-bold text-blue-900 mb-1">Rasyid</h4>
+            <p class="text-md md:text-lg text-gray-700 font-semibold">Sekretaris 2</p>
             <div class="mt-3 flex justify-center space-x-4 text-blue-500">
               <a href="#" class="hover:text-blue-700 transition"><i class="fab fa-linkedin text-xl"></i></a>
               <a href="#" class="hover:text-blue-700 transition"><i class="fab fa-instagram text-xl"></i></a>
             </div>
           </div>
-          <div class="hidden md:block org-line org-line-vertical h-8 -bottom-1 top-full"></div>
         </div>
-
-        <div class="w-full sm:w-1/2 lg:w-1/3 xl:w-1/4 p-2 relative">
-          <div class="bg-white rounded-xl shadow-lg border border-blue-200 p-6 text-center scale-up-hover shadow-hover h-full flex flex-col justify-center">
-            <img src="https://via.placeholder.com/150/ffb6c1/ff0000?text=Divisi+Humas" alt="Fitri Handayani - Kadiv Humas" class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-400 shadow-md"/>
-            <h3 class="text-xl md:text-2xl font-bold text-blue-900 mb-1">Fitri Handayani</h3>
-            <p class="text-md md:text-lg text-gray-700 font-semibold">Kepala Divisi Humas</p>
+        <div class="w-full p-2">
+          <div
+            class="bg-white rounded-xl shadow-lg border border-blue-200 p-6 text-center scale-up-hover shadow-hover h-full flex flex-col justify-center">
+            <img src="img/organigram/karin.jpg" alt="Karin - Bendahara 1"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-400 shadow-md" />
+            <h4 class="text-xl md:text-2xl font-bold text-blue-900 mb-1">Karin</h4>
+            <p class="text-md md:text-lg text-gray-700 font-semibold">Bendahara 1</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-500">
+              <a href="#" class="hover:text-blue-700 transition"><i class="fab fa-linkedin text-xl"></i></a>
+              <a href="#" class="hover:text-blue-700 transition"><i class="fab fa-instagram text-xl"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full p-2">
+          <div
+            class="bg-white rounded-xl shadow-lg border border-blue-200 p-6 text-center scale-up-hover shadow-hover h-full flex flex-col justify-center">
+            <img src="img/organigram/gia.jpg" alt="Gia - Bendahara 2"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-400 shadow-md" />
+            <h4 class="text-xl md:text-2xl font-bold text-blue-900 mb-1">Gia</h4>
+            <p class="text-md md:text-lg text-gray-700 font-semibold">Bendahara 2</p>
             <div class="mt-3 flex justify-center space-x-4 text-blue-500">
               <a href="#" class="hover:text-blue-700 transition"><i class="fab fa-linkedin text-xl"></i></a>
               <a href="#" class="hover:text-blue-700 transition"><i class="fab fa-instagram text-xl"></i></a>
@@ -166,40 +233,216 @@
       </div>
     </div>
 
-    <div class="py-12 md:py-16 text-center fade-in-up">
-        <h3 class="text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-blue-800">Anggota Divisi KKN</h3>
-        <p class="text-base md:text-lg text-gray-700 max-w-3xl mx-auto mb-6">Setiap divisi memiliki peran penting dalam kesuksesan program KKN. Berikut adalah daftar anggota tim kami.</p>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
-            <div class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300">
-                <h4 class="text-xl font-bold text-blue-800 mb-2">Divisi Pendidikan</h4>
-                <ul class="list-disc list-inside text-gray-700 text-left mx-auto max-w-max">
-                    <li>Ani Lestari</li>
-                    <li>Budi Santoso</li>
-                    <li>Citra Dewi</li>
-                </ul>
+    <div class="mb-12 fade-in-up">
+      <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">Divisi Acara</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 justify-items-center">
+        <div class="w-full p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="img/organigram/kailla.jpg" alt="Kailla"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Kailla</h4>
+            <p class="text-md text-gray-700">Anggota Divisi Acara</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
             </div>
-            <div class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300">
-                <h4 class="text-xl font-bold text-blue-800 mb-2">Divisi Kesehatan</h4>
-                <ul class="list-disc list-inside text-gray-700 text-left mx-auto max-w-max">
-                    <li>Doni Pratama</li>
-                    <li>Eka Safitri</li>
-                </ul>
+          </div>
+        </div>
+        <div class="w-full p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="https://via.placeholder.com/150/add8e6/4682b4?text=Ica" alt="Ica"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Ica</h4>
+            <p class="text-md text-gray-700">Anggota Divisi Acara</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
             </div>
-            <div class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300">
-                <h4 class="text-xl font-bold text-blue-800 mb-2">Divisi Lingkungan</h4>
-                <ul class="list-disc list-inside text-gray-700 text-left mx-auto max-w-max">
-                    <li>Fajar Ramadhan</li>
-                    <li>Gita Cahyani</li>
-                </ul>
+          </div>
+        </div>
+        <div class="w-full p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="https://via.placeholder.com/150/b0e0e6/4682b4?text=Wisnu" alt="Wisnu"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Wisnu</h4>
+            <p class="text-md text-gray-700">Anggota Divisi Acara</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
             </div>
-            <div class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300">
-                <h4 class="text-xl font-bold text-blue-800 mb-2">Divisi Ekonomi Kreatif</h4>
-                <ul class="list-disc list-inside text-gray-700 text-left mx-auto max-w-max">
-                    <li>Hari Wijaya</li>
-                    <li>Indah Permata</li>
-                </ul>
+          </div>
+        </div>
+        <div class="w-full p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="https://via.placeholder.com/150/afeeee/4682b4?text=Zordan" alt="Zordan"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Zordan</h4>
+            <p class="text-md text-gray-700">Anggota Divisi Acara</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-12 fade-in-up">
+      <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">Divisi Humas</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 justify-items-center">
+        <div class="w-full p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="img/organigram/zaki.jpg" alt="Zaki"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Zaki</h4>
+            <p class="text-md text-gray-700">Anggota Divisi Humas</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
             </div>
+          </div>
+        </div>
+        <div class="w-full p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="https://via.placeholder.com/150/f08080/c04040?text=Sarah" alt="Sarah"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Sarah</h4>
+            <p class="text-md text-gray-700">Anggota Divisi Humas</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="https://via.placeholder.com/150/ffb6c1/c04040?text=Fazri" alt="Fazri"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Fazri</h4>
+            <p class="text-md text-gray-700">Anggota Divisi Humas</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="w-full p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="https://via.placeholder.com/150/ffa07a/c04040?text=Restu" alt="Restu"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Restu</h4>
+            <p class="text-md text-gray-700">Anggota Divisi Humas</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-12 fade-in-up">
+      <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">Divisi Logistik</h3>
+      <div class="flex justify-center flex-wrap gap-6 md:gap-8">
+        <!-- 3 card anggota -->
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="img/organigram/riyandi.jpg" alt="Amel"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Amel</h4>
+            <p class="text-md text-gray-700">Anggota Divisi Logistik</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Syifa -->
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="https://via.placeholder.com/150/d8bfd8/800080?text=Syifa" alt="Dandi"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Dandi</h4>
+            <p class="text-md text-gray-700">Anggota Divisi Logistik</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Akmal -->
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="https://via.placeholder.com/150/e0b0ff/800080?text=Akmal" alt="Jamaludin"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Jamaludin</h4>
+            <p class="text-md text-gray-700">Anggota Divisi Logistik</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-12 fade-in-up">
+      <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-6 text-center">Divisi PDD</h3>
+      <div class="flex justify-center flex-wrap gap-6 md:gap-8">
+        <!-- 3 card anggota -->
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="img/organigram/riyandi.jpg" alt="Pj Riyandi"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Pj Riyandi</h4>
+            <p class="text-md text-gray-700">Anggota Divisi PDD</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Syifa -->
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="https://via.placeholder.com/150/d8bfd8/800080?text=Syifa" alt="Syifa"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Syifa</h4>
+            <p class="text-md text-gray-700">Anggota Divisi PDD</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
+            </div>
+          </div>
+        </div>
+        <!-- Akmal -->
+        <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-2">
+          <div
+            class="bg-blue-50 p-5 rounded-lg shadow-sm border border-blue-200 hover:shadow-md transition duration-300 h-full flex flex-col justify-center text-center">
+            <img src="https://via.placeholder.com/150/e0b0ff/800080?text=Akmal" alt="Akmal"
+              class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-4 object-cover border-4 border-blue-300 shadow-sm" />
+            <h4 class="text-xl font-bold text-blue-800 mb-1">Akmal</h4>
+            <p class="text-md text-gray-700">Anggota Divisi PDD</p>
+            <div class="mt-3 flex justify-center space-x-4 text-blue-400">
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin text-lg"></i></a>
+              <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-instagram text-lg"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -219,10 +462,11 @@
 
   <script>
     // JavaScript for responsive navbar toggle
-    document.getElementById('menu-button').addEventListener('click', function() {
+    document.getElementById('menu-button').addEventListener('click', function () {
       const navbarMenu = document.getElementById('navbar-menu');
       navbarMenu.classList.toggle('active');
     });
   </script>
 </body>
+
 </html>
