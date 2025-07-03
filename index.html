@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beranda - KKN 2025</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    /* Custom Animations & Styles */
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.6s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .scale-up-hover {
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .scale-up-hover:hover {
+      transform: scale(1.03);
+    }
+
+    .shadow-hover {
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .shadow-hover:hover {
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Gradient Background for Hero */
+    .hero-gradient {
+      background: linear-gradient(to right, #60A5FA, #3B82F6);
+    }
+
+    /* Responsive Navbar Toggle (for smaller screens) */
+    @media (max-width: 768px) {
+      .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #1e3a8a; /* Darker blue for dropdown */
+        position: absolute;
+        top: 64px; /* Adjust based on navbar height */
+        left: 0;
+        padding-bottom: 1rem;
+      }
+      .navbar-menu.active {
+        display: flex;
+      }
+      .navbar-menu a {
+        padding: 0.75rem 1.5rem;
+        text-align: center;
+      }
+      .hamburger-icon {
+        display: block;
+      }
+    }
+
+    /* Styles for the Media Partner Slider */
+    .slider-container {
+      overflow: hidden;
+      position: relative;
+    }
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.8s ease-in-out; /* Smooth transition for slides */
+    }
+    .slider-item {
+      flex: 0 0 100%; /* Each item takes full width of container */
+      min-width: 100%;
+      box-sizing: border-box; /* Include padding/border in width */
+      display: flex; /* For centering logos within item */
+      justify-content: center;
+      align-items: center;
+    }
+    .slider-item img {
+      max-height: 80px; /* Adjust logo size */
+      width: auto;
+      max-width: 90%; /* Ensure logos don't overflow on small screens */
+      object-fit: contain;
+      filter: grayscale(100%); /* Optional: Make logos grayscale */
+      opacity: 0.7; /* Optional: Slight transparency */
+      transition: filter 0.3s, opacity 0.3s;
+    }
+    .slider-item img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
+    }
+
+    /* Dots Navigation for Slider */
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+    .dot {
+      height: 10px;
+      width: 10px;
+      background-color: #cbd5e1; /* gray-300 */
+      border-radius: 50%;
+      display: inline-block;
+      margin: 0 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .dot.active {
+      background-color: #3B82F6; /* blue-600 */
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+  <nav class="bg-blue-800 text-white shadow-lg sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl md:text-3xl font-extrabold tracking-wide animate-pulse">KKN Desa Cisurupan</a>
+      <button class="md:hidden text-white text-2xl focus:outline-none hamburger-icon" id="menu-button">
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="hidden md:flex space-x-6 text-lg navbar-menu" id="navbar-menu">
+        <a href="index.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group active-link">Beranda
+          <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+        <a href="artikel.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Artikel
+          <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+        <a href="struktur.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Struktur
+          <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="hero-gradient text-white text-center py-16 md:py-24 px-4 relative overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-10">
+      <svg class="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <defs>
+          <pattern id="pattern-circles" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+            <circle cx="5" cy="5" r="1.5" fill="rgba(255,255,255,0.2)"/>
+          </pattern>
+        </defs>
+        <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-circles)"/>
+      </svg>
+    </div>
+    <div class="relative z-10 fade-in-up">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 md:mb-5 leading-tight">Selamat Datang di Website KKN 2025 👋</h1>
+      <p class="text-md md:text-lg mb-6 md:mb-8 max-w-3xl mx-auto opacity-90">Menampilkan dokumentasi dan kegiatan **KKN Mahasiswa di Desa Cisurupan Baru** secara interaktif dan informatif.</p>
+      <a href="artikel.html" class="bg-yellow-400 hover:bg-yellow-500 text-blue-800 font-bold px-6 py-3 md:px-8 md:py-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg text-sm md:text-base">Lihat Artikel Kegiatan <i class="fas fa-arrow-right ml-2"></i></a>
+    </div>
+  </section>
+
+  <section class="py-12 md:py-16 px-4 text-center max-w-5xl mx-auto fade-in-up">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-blue-800">Tentang KKN Kami</h2>
+    <p class="text-base md:text-lg text-gray-700 mb-4 md:mb-6 leading-relaxed">
+      **KKN 2025** bertujuan untuk memberdayakan masyarakat Desa Cisurupan Baru melalui edukasi, teknologi, dan inovasi berkelanjutan. Kami berkomitmen untuk menciptakan dampak positif dan meninggalkan warisan yang berarti bagi komunitas.
+    </p>
+    <a href="tentang.html" class="text-blue-600 hover:text-blue-800 font-semibold text-base md:text-lg transition duration-300 hover:underline">Pelajari Lebih Lanjut <i class="fas fa-external-link-alt ml-1 text-sm"></i></a>
+  </section>
+
+  <section class="bg-gray-100 py-12 md:py-16 px-4 max-w-7xl mx-auto rounded-xl shadow-inner mb-8 md:mb-12 fade-in-up">
+    <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-10 text-blue-800">Galeri Kegiatan Kami 📸</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+      <div class="relative rounded-xl overflow-hidden shadow-lg scale-up-hover group">
+        <img src="img/kegiatan1.jpg" alt="Kegiatan Edukasi" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <p class="text-white text-lg md:text-xl font-semibold">Edukasi Anak-anak</p>
+        </div>
+      </div>
+      <div class="relative rounded-xl overflow-hidden shadow-lg scale-up-hover group">
+        <img src="img/kegiatan2.jpg" alt="Kegiatan Bersih Desa" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <p class="text-white text-lg md:text-xl font-semibold">Kerja Bakti Desa</p>
+        </div>
+      </div>
+      <div class="relative rounded-xl overflow-hidden shadow-lg scale-up-hover group">
+        <img src="img/kegiatan3.jpg" alt="Sosialisasi Kesehatan" class="w-full h-48 md:h-64 object-cover transition-transform duration-500 group-hover:scale-110">
+        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+          <p class="text-white text-lg md:text-xl font-semibold">Sosialisasi Kesehatan</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-6 md:mt-8">
+      <a href="galeri.html" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-md text-sm md:text-base">
+        Lihat Semua Galeri <i class="fas fa-images ml-2"></i>
+      </a>
+    </div>
+  </section>
+
+  <section class="bg-white py-12 md:py-16 px-4 fade-in-up">
+    <div class="max-w-5xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-blue-800">Tim Inti KKN 🤝</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-6">
+        <div class="bg-blue-50 p-5 md:p-6 rounded-xl shadow-md border border-blue-200 shadow-hover transition duration-300 ease-in-out">
+          <img src="img/organigram/ketua.jpg" alt="Rafi Hidayat" class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-3 md:mb-4 object-cover border-4 border-blue-400 shadow-lg">
+          <p class="font-extrabold text-lg md:text-xl text-blue-900">Rafi Hidayat</p>
+          <p class="text-sm md:text-md text-gray-600">Ketua Tim KKN</p>
+          <div class="mt-2 md:mt-3 flex justify-center space-x-3 text-blue-500">
+            <a href="#" class="hover:text-blue-700 transition text-lg md:text-xl"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="hover:text-blue-700 transition text-lg md:text-xl"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="bg-blue-50 p-5 md:p-6 rounded-xl shadow-md border border-blue-200 shadow-hover transition duration-300 ease-in-out">
+          <img src="img/sekr.jpg" alt="Nadia Lestari" class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-3 md:mb-4 object-cover border-4 border-blue-400 shadow-lg">
+          <p class="font-extrabold text-lg md:text-xl text-blue-900">Nadia Lestari</p>
+          <p class="text-sm md:text-md text-gray-600">Sekretaris Tim</p>
+          <div class="mt-2 md:mt-3 flex justify-center space-x-3 text-blue-500">
+            <a href="#" class="hover:text-blue-700 transition text-lg md:text-xl"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="hover:text-blue-700 transition text-lg md:text-xl"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="bg-blue-50 p-5 md:p-6 rounded-xl shadow-md border border-blue-200 shadow-hover transition duration-300 ease-in-out">
+          <img src="https://via.placeholder.com/150" alt="Bendahara" class="w-28 h-28 md:w-32 md:h-32 rounded-full mx-auto mb-3 md:mb-4 object-cover border-4 border-blue-400 shadow-lg">
+          <p class="font-extrabold text-lg md:text-xl text-blue-900">Budi Santoso</p>
+          <p class="text-sm md:text-md text-gray-600">Bendahara Tim</p>
+          <div class="mt-2 md:mt-3 flex justify-center space-x-3 text-blue-500">
+            <a href="#" class="hover:text-blue-700 transition text-lg md:text-xl"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="hover:text-blue-700 transition text-lg md:text-xl"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+      <a href="struktur.html" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-md mt-4 md:mt-6 text-sm md:text-base">
+        Lihat Struktur Lengkap <i class="fas fa-users ml-2"></i>
+      </a>
+    </div>
+  </section>
+
+  <section class="bg-gray-200 py-12 md:py-16 px-4 fade-in-up">
+    <div class="max-w-7xl mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-10 text-blue-800">Mitra Kami 🤝</h2>
+      <p class="text-base md:text-lg text-gray-700 mb-6 md:mb-8 max-w-2xl mx-auto">Kami berterima kasih kepada semua pihak yang telah mendukung kegiatan KKN kami.</p>
+
+      <div class="slider-container relative max-w-4xl mx-auto rounded-lg shadow-xl bg-white p-4">
+        <div class="slider-wrapper" id="partner-slider">
+          </div>
+        <div class="slider-dots" id="partner-dots">
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-blue-700 text-white py-12 md:py-16 px-4 text-center">
+    <div class="max-w-4xl mx-auto fade-in-up">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Ingin Tahu Lebih Banyak?</h2>
+      <p class="text-base md:text-lg mb-6 md:mb-8 opacity-90">Jelajahi artikel-artikel kami untuk mendapatkan informasi terbaru tentang kegiatan KKN 2025.</p>
+      <a href="artikel.html" class="bg-yellow-400 hover:bg-yellow-500 text-blue-800 font-bold px-6 py-3 md:px-8 md:py-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-lg text-sm md:text-base">Baca Artikel Terbaru <i class="fas fa-newspaper ml-2"></i></a>
+    </div>
+  </section>
+
+  <footer class="bg-blue-900 text-white py-6 md:py-8 text-center">
+    <div class="container mx-auto px-4">
+      <p class="mb-2 md:mb-3 text-base md:text-lg">&copy; 2025 KKN Desa Cisurupan. All rights reserved.</p>
+      <div class="space-x-4 md:space-x-6 text-xl md:text-2xl mb-3 md:mb-4">
+        <a href="#" class="hover:text-yellow-300 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" class="hover:text-yellow-300 transition duration-300"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-yellow-300 transition duration-300"><i class="fab fa-youtube"></i></a>
+        <a href="#" class="hover:text-yellow-300 transition duration-300"><i class="fab fa-twitter"></i></a>
+      </div>
+      <p class="text-xs md:text-sm text-gray-400">Dibuat dengan ❤️ untuk kemajuan Desa Cisurupan Baru.</p>
+    </div>
+  </footer>
+
+  <script>
+    // JavaScript for responsive navbar toggle
+    document.getElementById('menu-button').addEventListener('click', function() {
+      const navbarMenu = document.getElementById('navbar-menu');
+      navbarMenu.classList.toggle('active');
+    });
+
+    // --- Media Partner Slider JavaScript ---
+    document.addEventListener('DOMContentLoaded', () => {
+      const sliderWrapper = document.getElementById('partner-slider');
+      const dotsContainer = document.getElementById('partner-dots');
+
+      // Dummy data for partner logos (replace with actual image paths and alt texts)
+      const partners = [
+        { src: 'https://via.placeholder.com/150x80/6366f1/ffffff?text=Partner+A', alt: 'Logo Partner A' },
+        { src: 'https://via.placeholder.com/150x80/ef4444/ffffff?text=Partner+B', alt: 'Logo Partner B' },
+        { src: 'https://via.placeholder.com/150x80/22c55e/ffffff?text=Partner+C', alt: 'Logo Partner C' },
+        { src: 'https://via.placeholder.com/150x80/eab308/ffffff?text=Partner+D', alt: 'Logo Partner D' },
+        { src: 'https://via.placeholder.com/150x80/8b5cf6/ffffff?text=Partner+E', alt: 'Logo Partner E' },
+        { src: 'https://via.placeholder.com/150x80/14b8a6/ffffff?text=Partner+F', alt: 'Logo Partner F' },
+      ];
+
+      let currentIndex = 0;
+      let slideInterval;
+
+      // Create slider items and dots
+      partners.forEach((partner, index) => {
+        const slideItem = document.createElement('div');
+        slideItem.className = 'slider-item';
+        slideItem.innerHTML = `<a href="${partner.link || '#'}"><img src="${partner.src}" alt="${partner.alt}"></a>`;
+        sliderWrapper.appendChild(slideItem);
+
+        const dot = document.createElement('span');
+        dot.className = 'dot';
+        dot.dataset.index = index;
+        dotsContainer.appendChild(dot);
+      });
+
+      const slides = document.querySelectorAll('.slider-item');
+      const dots = document.querySelectorAll('.dot');
+
+      function showSlide(index) {
+        // Ensure index wraps around for continuous loop
+        if (index >= slides.length) {
+          currentIndex = 0;
+        } else if (index < 0) {
+          currentIndex = slides.length - 1;
+        } else {
+          currentIndex = index;
+        }
+
+        // Move the slider
+        const offset = -currentIndex * 100;
+        sliderWrapper.style.transform = `translateX(${offset}%)`;
+
+        // Update active dot
+        dots.forEach((dot, i) => {
+          if (i === currentIndex) {
+            dot.classList.add('active');
+          } else {
+            dot.classList.remove('active');
+          }
+        });
+      }
+
+      function nextSlide() {
+        showSlide(currentIndex + 1);
+      }
+
+      function startSlider() {
+        slideInterval = setInterval(nextSlide, 3000); // Change slide every 3 seconds
+      }
+
+      function stopSlider() {
+        clearInterval(slideInterval);
+      }
+
+      // Initial slide display
+      showSlide(currentIndex);
+      startSlider();
+
+      // Add event listeners to dots for manual navigation
+      dotsContainer.addEventListener('click', (event) => {
+        if (event.target.classList.contains('dot')) {
+          stopSlider(); // Stop autoplay when manually navigating
+          const dotIndex = parseInt(event.target.dataset.index);
+          showSlide(dotIndex);
+          startSlider(); // Restart autoplay after a short delay, or keep stopped
+        }
+      });
+
+      // Optional: Pause on hover
+      sliderWrapper.addEventListener('mouseenter', stopSlider);
+      sliderWrapper.addEventListener('mouseleave', startSlider);
+    });
+  </script>
+
+</body>
+</html>

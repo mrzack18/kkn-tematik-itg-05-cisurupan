@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mitra Kami - KKN 2025</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+    <style>
+        /* Custom Animations & Styles */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .scale-up-hover {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .scale-up-hover:hover {
+            transform: scale(1.03);
+        }
+
+        .shadow-hover {
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .shadow-hover:hover {
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Responsive Navbar Toggle (for smaller screens) */
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #1e3a8a; /* Darker blue for dropdown */
+                position: absolute;
+                top: 64px; /* Adjust based on navbar height */
+                left: 0;
+                padding-bottom: 1rem;
+            }
+            .navbar-menu.active {
+                display: flex;
+            }
+            .navbar-menu a {
+                padding: 0.75rem 1.5rem;
+                text-align: center;
+            }
+            .hamburger-icon {
+                display: block;
+            }
+        }
+
+        /* Styling for partner logos */
+        .partner-logo-card img {
+            max-height: 100px; /* Adjust as needed */
+            width: auto;
+            object-fit: contain;
+            filter: grayscale(80%); /* Slightly grayscale for minimalist look */
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        .partner-logo-card:hover img {
+            filter: grayscale(0%); /* Full color on hover */
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans">
+
+    <nav class="bg-blue-800 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl md:text-3xl font-extrabold tracking-wide animate-pulse">KKN Desa Cisurupan</a>
+            <button class="md:hidden text-white text-2xl focus:outline-none hamburger-icon" id="menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="hidden md:flex space-x-6 text-lg navbar-menu" id="navbar-menu">
+                <a href="index.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Beranda
+                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </a>
+                <a href="artikel.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Artikel
+                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </a>
+                <a href="struktur.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group">Struktur
+                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+                </a>
+                <a href="media-partner.html" class="hover:text-yellow-300 transition duration-300 ease-in-out relative group active-link">Mitra Kami
+                    <span class="absolute left-0 bottom-0 w-full h-0.5 bg-yellow-300 scale-x-100 transition-transform duration-300 origin-left"></span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="bg-gradient-to-r from-blue-600 to-blue-800 text-white text-center py-16 px-4">
+        <h1 class="text-4xl md:text-5xl font-extrabold mb-4 fade-in-up">Mitra & Pendukung Kami 🤝</h1>
+        <p class="text-lg md:text-xl max-w-2xl mx-auto opacity-90 fade-in-up" style="animation-delay: 0.2s;">Kami berterima kasih kepada semua organisasi dan individu yang telah berkontribusi pada keberhasilan program KKN kami.</p>
+    </section>
+
+    <div class="container mx-auto px-4 py-8 md:py-12 max-w-7xl">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-10 text-blue-800 fade-in-up">Jejaring Kolaborasi Kami</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-8 justify-items-center" id="partnerLogos">
+            </div>
+
+        <div class="mt-12 md:mt-16 text-center bg-blue-50 p-6 md:p-8 rounded-lg shadow-md fade-in-up" style="animation-delay: 0.5s;">
+            <h3 class="text-2xl md:text-3xl font-bold text-blue-800 mb-4">Ingin Menjadi Mitra Kami?</h3>
+            <p class="text-base md:text-lg text-gray-700 mb-6">
+                Kami selalu terbuka untuk menjalin kerjasama baru yang positif. Jika organisasi atau perusahaan Anda tertarik untuk mendukung program KKN kami selanjutnya, jangan ragu untuk menghubungi kami.
+            </p>
+            <a href="mailto:kkn.cisurupan@example.com?subject=Proposal%20Kerjasama%20KKN" class="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white font-bold px-6 py-3 rounded-full transition duration-300 ease-in-out transform hover:scale-105 shadow-md text-sm md:text-base">
+                <i class="fas fa-envelope mr-2"></i> Hubungi Kami
+            </a>
+        </div>
+    </div>
+
+    <footer class="bg-blue-900 text-white py-6 md:py-8 text-center mt-8">
+        <div class="container mx-auto px-4">
+            <p class="mb-2 md:mb-3 text-base md:text-lg">&copy; 2025 KKN Desa Cisurupan. All rights reserved.</p>
+            <div class="space-x-4 md:space-x-6 text-xl md:text-2xl mb-3 md:mb-4">
+                <a href="#" class="hover:text-yellow-300 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="hover:text-yellow-300 transition duration-300"><i class="fab fa-twitter"></i></a>
+            </div>
+            <p class="text-xs md:text-sm text-gray-400">Dibuat dengan ❤️ untuk kemajuan Desa Cisurupan Baru.</p>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for responsive navbar toggle
+        document.getElementById('menu-button').addEventListener('click', function() {
+            const navbarMenu = document.getElementById('navbar-menu');
+            navbarMenu.classList.toggle('active');
+        });
+
+        // JavaScript for loading partner logos dynamically
+        document.addEventListener('DOMContentLoaded', function() {
+            const partnerLogosContainer = document.getElementById('partnerLogos');
+
+            // Dummy data for partner logos (replace with actual image paths and alt texts)
+            // Ideally, these images would be in your 'img/' folder
+            const partners = [
+                { src: 'https://via.placeholder.com/200x100/60A5FA/ffffff?text=Pemerintah%20Desa', alt: 'Pemerintah Desa Cisurupan', link: '#' },
+                { src: 'https://via.placeholder.com/200x100/3B82F6/ffffff?text=Dinas%20Pertanian', alt: 'Dinas Pertanian Lokal', link: '#' },
+                { src: 'https://via.placeholder.com/200x100/1D4ED8/ffffff?text=Bank%20Lokal', alt: 'Bank Mandiri Cabang Cisurupan', link: '#' },
+                { src: 'https://via.placeholder.com/200x100/2563EB/ffffff?text=UMKM%20Makmur', alt: 'UMKM Makmur Jaya', link: '#' },
+                { src: 'https://via.placeholder.com/200x100/1E40AF/ffffff?text=Komunitas%20Edukasi', alt: 'Komunitas Edukasi Cisurupan', link: '#' },
+                { src: 'https://via.placeholder.com/200x100/1C3C8C/ffffff?text=Puskesmas', alt: 'Puskesmas Cisurupan', link: '#' },
+                { src: 'https://via.placeholder.com/200x100/0E2954/ffffff?text=Media%20Lokal', alt: 'Koran Harian Cisurupan', link: '#' },
+                { src: 'https://via.placeholder.com/200x100/0F274D/ffffff?text=Yayasan%20Hijau', alt: 'Yayasan Hijau Alam', link: '#' },
+            ];
+
+            partners.forEach(partner => {
+                const partnerCard = `
+                    <a href="${partner.link}" target="_blank" rel="noopener noreferrer" class="partner-logo-card bg-white p-4 rounded-lg shadow-md flex items-center justify-center h-32 md:h-40 transition-all duration-300 hover:shadow-xl fade-in-up">
+                        <img src="${partner.src}" alt="${partner.alt}" class="max-w-full">
+                    </a>
+                `;
+                partnerLogosContainer.innerHTML += partnerCard;
+            });
+        });
+    </script>
+</body>
+</html>
